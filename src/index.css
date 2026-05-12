@@ -1,0 +1,64 @@
+@import url('https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@400;500;700;800&display=swap');
+@import "tailwindcss";
+
+@theme {
+  --font-sans: "Be Vietnam Pro", ui-sans-serif, system-ui, sans-serif;
+
+  --color-background: #051424;
+  --color-surface-lowest: #010f1f;
+  --color-surface-low: #0d1c2d;
+  --color-surface: #122131;
+  --color-surface-high: #1c2b3c;
+  --color-surface-highest: #273647;
+  
+  --color-emerald-primary: #adf847;
+  --color-emerald-dim: #93da29;
+  
+  --color-on-surface: #d4e4fa;
+  --color-on-surface-variant: #c1cab0;
+  
+  --color-outline: #1E293B;
+  --color-outline-variant: #424936;
+}
+
+@layer base {
+  body {
+    @apply bg-background text-on-surface font-sans antialiased;
+  }
+}
+
+.emerald-glow {
+  box-shadow: 0 0 20px rgba(173, 248, 71, 0.15);
+}
+
+.emerald-glow-strong:hover {
+  box-shadow: 0 0 30px rgba(173, 248, 71, 0.35);
+}
+
+.glass-card {
+  background: rgba(18, 33, 49, 0.7);
+  backdrop-filter: blur(12px);
+}
+
+.technical-border {
+  border: 1px solid var(--color-outline);
+}
+
+.logo-invert {
+  filter: invert(1) brightness(2);
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+}
+::-webkit-scrollbar-track {
+  background: var(--color-surface-lowest);
+}
+::-webkit-scrollbar-thumb {
+  background: var(--color-surface-highest);
+  border-radius: 4px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: var(--color-emerald-primary);
+}
